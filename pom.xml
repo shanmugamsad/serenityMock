@@ -18,6 +18,7 @@
 		<com.fasterxml.jackson.core.version>2.13.1</com.fasterxml.jackson.core.version>
 		<webdriver.driver>chrome</webdriver.driver>
 		<jacoco.version>0.8.4</jacoco.version>
+		<avro.version>1.9.2</avro.version>
 		<jacoco.it.execution.data.file>${project.build.directory}/coverage-reports/jacoco-it.exec</jacoco.it.execution.data.file>
 		<jacoco.ut.execution.data.file>${project.build.directory}/coverage-reports/jacoco-ut.exec</jacoco.ut.execution.data.file>
 		<maven.compiler.source>1.7</maven.compiler.source>
@@ -167,8 +168,49 @@
 			<artifactId>org.jacoco.agent</artifactId>
 			<version>${jacoco.version}</version>
 		</dependency>
+		<!-- ####################AWS##############################-->
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>s3</artifactId>
+			<version>2.14.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.11.163</version>
+		</dependency>
 
-
+		<!-- #####################KAFKA####################################-->
+		<!--<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-avro-serializer</artifactId>
+			<version>3.3.1</version>
+		</dependency>-->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+			<version>${avro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro-ipc</artifactId>
+			<version>${avro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro-maven-plugin</artifactId>
+			<version>${avro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro-compiler</artifactId>
+			<version>${avro.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -16,7 +16,6 @@ public class DBUtils {
 	
 	final static Logger logger = LogManager.getLogger(DBUtils.class);
 	static FileIoUtils fileReadWrite = new FileIoUtils();
-	JavaUtils  javaUtils = new JavaUtils();
 	
 	static ResultSet rs = null;
 	static Connection conn = null;

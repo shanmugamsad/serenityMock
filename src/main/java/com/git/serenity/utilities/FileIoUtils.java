@@ -16,6 +16,17 @@ public class FileIoUtils {
 	InputStream inputStream;
 	String result;
 	
+	public void propertyReader(String fileName) throws IOException{
+		Properties prop = null;
+		try {
+			prop = new Properties();
+			prop.load(new FileInputStream("src/main/resources/"+fileName));
+		}
+		catch(Exception e) {
+			System.out.println("Exception: "+e);
+		}
+	}
+	
 	//Read from property file based on file and property name
 	public String propertyFileReader(String fileName,String propertyName) throws IOException {
 		try {
