@@ -1,8 +1,10 @@
 package com.git.serenity.utilities;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class JavaUtils {
 	
@@ -22,6 +24,25 @@ public class JavaUtils {
 			e.printStackTrace();
 		}
 		return rsVals;
+	}
+	
+	//To fetch Xpath value with NO varaibles
+	public String formXpath(String xpathName,String oldVar,String newvar) {
+		String xpathVal = null;
+		try {
+			xpathVal = fileReadWrite.propertyFileReader("pageElement", xpathName).replace(oldVar, newvar);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return xpathVal;
+	}
+	
+	//Encode String
+	public String baseEncode(String propertName) throws IOException {
+		String password = fileReadWrite.propertyFileReader("application", propertName);
+		String encodedString = Base64.getEncoder().encodeToString(password.getBytes());
+		return encodedString;
 	}
 
 }
